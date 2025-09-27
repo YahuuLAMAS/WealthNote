@@ -1,0 +1,16 @@
+{
+  "status": "commited",
+  "type": "backend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:8080",
+  "backendAuthType": "public",
+  "executionArgs": {
+    "projectName": "SMSFinance",
+    "projectPath": "D:\\Coding\\SMSFinance",
+    "testIds": [],
+    "additionalInstruction": "This is an Android Kotlin project with Jetpack Compose UI. The project includes SMS parsing for UPI transactions, biometric authentication, Room database with encryption, and modern Android architecture. Please generate comprehensive tests that cover the business logic, data layer, service layer, and UI components. Focus on testing the SMS parsing patterns, transaction management, biometric authentication flow, and database operations.",
+    "envs": {
+      "API_KEY": "sk-user-cjx_ga46hBdz_4I676ghd36kt9OJ16xtuspjKTZ21aOjxNmk1C4oJ_up_KnuFF0jsmfLSq7AYQAtR7aje1AaW5flsqDRxwjjSG5KER7zntxPajrmSLwhpOTNCqGy0fqhIco"
+    }
+  }
+}

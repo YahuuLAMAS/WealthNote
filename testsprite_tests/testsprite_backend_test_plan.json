@@ -1,0 +1,52 @@
+[
+  {
+    "id": "TC001",
+    "title": "get_all_transactions_should_return_list_of_transactions",
+    "description": "Verify that the GET /transactions API returns a list of all transactions with correct data fields including id, timestamp, amount, merchant, isDebit, and userNote."
+  },
+  {
+    "id": "TC002",
+    "title": "create_new_transaction_should_store_transaction_successfully",
+    "description": "Verify that the POST /transactions API creates a new transaction successfully when provided with valid transaction data and returns status 201."
+  },
+  {
+    "id": "TC003",
+    "title": "get_weekly_transactions_should_return_transactions_for_current_week",
+    "description": "Verify that the GET /transactions/weekly API returns a list of transactions filtered for the current week with accurate data."
+  },
+  {
+    "id": "TC004",
+    "title": "parse_sms_should_return_parsed_transaction_data",
+    "description": "Verify that the POST /parse-sms API correctly parses a valid SMS message body and returns the extracted transaction data including amount, merchant, and transaction type."
+  },
+  {
+    "id": "TC005",
+    "title": "parse_sms_should_return_400_for_unparsable_sms",
+    "description": "Verify that the POST /parse-sms API returns a 400 error response when the SMS message body cannot be parsed into a valid transaction."
+  },
+  {
+    "id": "TC006",
+    "title": "check_biometric_availability_should_return_status",
+    "description": "Verify that the GET /auth/biometric/check API returns the biometric availability status with a boolean field 'available'."
+  },
+  {
+    "id": "TC007",
+    "title": "authenticate_using_biometric_should_succeed_with_valid_biometric",
+    "description": "Verify that the POST /auth/biometric/authenticate API returns 200 status when biometric authentication is successful."
+  },
+  {
+    "id": "TC008",
+    "title": "authenticate_using_biometric_should_fail_with_invalid_biometric",
+    "description": "Verify that the POST /auth/biometric/authenticate API returns 401 status when biometric authentication fails."
+  },
+  {
+    "id": "TC009",
+    "title": "initialize_database_should_return_success_status",
+    "description": "Verify that the POST /database/init API initializes the encrypted database successfully and returns status 200."
+  },
+  {
+    "id": "TC010",
+    "title": "get_main_screen_should_render_ui_successfully",
+    "description": "Verify that the GET /ui/main API returns a successful response indicating the main screen UI is rendered correctly."
+  }
+]

@@ -1,0 +1,287 @@
+{
+  "tech_stack": [
+    "Kotlin",
+    "Android",
+    "Jetpack Compose",
+    "Room Database",
+    "AndroidX Security Crypto",
+    "Biometric Authentication",
+    "SMS Parsing",
+    "Coroutines"
+  ],
+  "features": [
+    {
+      "name": "Transaction Management",
+      "description": "Core functionality for managing UPI transactions including creation, retrieval, and updates",
+      "files": [
+        "app/src/main/java/com/example/upiexpensetracker/data/model/Transaction.kt",
+        "app/src/main/java/com/example/upiexpensetracker/data/dao/TransactionDao.kt",
+        "app/src/main/java/com/example/upiexpensetracker/repository/TransactionRepository.kt",
+        "app/src/main/java/com/example/upiexpensetracker/controller/TransactionController.kt",
+        "app/src/main/java/com/example/upiexpensetracker/viewmodel/TransactionViewModel.kt"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Transaction Management API",
+          "version": "1.0.0",
+          "description": "APIs for managing UPI transactions"
+        },
+        "paths": {
+          "/transactions": {
+            "get": {
+              "summary": "Get all transactions",
+              "responses": {
+                "200": {
+                  "description": "List of transactions",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/Transaction"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "post": {
+              "summary": "Create new transaction",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/Transaction"
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "201": {
+                  "description": "Transaction created successfully"
+                }
+              }
+            }
+          },
+          "/transactions/weekly": {
+            "get": {
+              "summary": "Get weekly transactions",
+              "responses": {
+                "200": {
+                  "description": "List of weekly transactions"
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "Transaction": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "timestamp": {
+                  "type": "integer",
+                  "format": "int64"
+                },
+                "amount": {
+                  "type": "number",
+                  "format": "double"
+                },
+                "merchant": {
+                  "type": "string"
+                },
+                "isDebit": {
+                  "type": "boolean"
+                },
+                "userNote": {
+                  "type": "string",
+                  "nullable": true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "SMS Parsing Service",
+      "description": "Service for parsing SMS messages to extract UPI transaction information",
+      "files": [
+        "app/src/main/java/com/example/upiexpensetracker/service/SmsParsingService.kt",
+        "app/src/main/java/com/example/upiexpensetracker/receiver/SmsReceiver.kt"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "SMS Parsing Service",
+          "version": "1.0.0",
+          "description": "Service for parsing SMS messages to extract transaction data"
+        },
+        "paths": {
+          "/parse-sms": {
+            "post": {
+              "summary": "Parse SMS message",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "type": "object",
+                      "properties": {
+                        "smsBody": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "responses": {
+                "200": {
+                  "description": "Parsed transaction data",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Transaction"
+                      }
+                    }
+                  }
+                },
+                "400": {
+                  "description": "Unable to parse SMS"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Biometric Authentication",
+      "description": "Biometric authentication service for secure app access",
+      "files": [
+        "app/src/main/java/com/example/upiexpensetracker/service/BiometricAuthService.kt",
+        "app/src/main/java/com/example/upiexpensetracker/controller/AuthenticationController.kt",
+        "app/src/main/java/com/example/upiexpensetracker/viewmodel/AuthenticationViewModel.kt"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Biometric Authentication API",
+          "version": "1.0.0",
+          "description": "APIs for biometric authentication"
+        },
+        "paths": {
+          "/auth/biometric/check": {
+            "get": {
+              "summary": "Check biometric availability",
+              "responses": {
+                "200": {
+                  "description": "Biometric availability status",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "available": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/auth/biometric/authenticate": {
+            "post": {
+              "summary": "Authenticate using biometric",
+              "responses": {
+                "200": {
+                  "description": "Authentication successful"
+                },
+                "401": {
+                  "description": "Authentication failed"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Database Management",
+      "description": "Encrypted Room database for storing transaction data",
+      "files": [
+        "app/src/main/java/com/example/upiexpensetracker/data/database/TransactionDatabase.kt"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "Database Management",
+          "version": "1.0.0",
+          "description": "Database operations for transaction storage"
+        },
+        "paths": {
+          "/database/init": {
+            "post": {
+              "summary": "Initialize database",
+              "responses": {
+                "200": {
+                  "description": "Database initialized successfully"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "UI Components",
+      "description": "Jetpack Compose UI components for the main application interface",
+      "files": [
+        "app/src/main/java/com/example/upiexpensetracker/ui/screens/MainScreen.kt",
+        "app/src/main/java/com/example/upiexpensetracker/ui/screens/AuthenticationScreen.kt",
+        "app/src/main/java/com/example/upiexpensetracker/ui/AppContent.kt",
+        "app/src/main/java/com/example/upiexpensetracker/ui/theme/Theme.kt",
+        "app/src/main/java/com/example/upiexpensetracker/activity/MainActivity.kt"
+      ],
+      "api_doc": {
+        "openapi": "3.0.0",
+        "info": {
+          "title": "UI Components",
+          "version": "1.0.0",
+          "description": "UI components and screens"
+        },
+        "paths": {
+          "/ui/main": {
+            "get": {
+              "summary": "Get main screen",
+              "responses": {
+                "200": {
+                  "description": "Main screen rendered"
+                }
+              }
+            }
+          },
+          "/ui/auth": {
+            "get": {
+              "summary": "Get authentication screen",
+              "responses": {
+                "200": {
+                  "description": "Authentication screen rendered"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
+

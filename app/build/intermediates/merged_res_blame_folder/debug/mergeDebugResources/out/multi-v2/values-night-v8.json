@@ -1,0 +1,45 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.upiexpensetracker.app-mergeDebugResources-58:/values-night-v8/values-night-v8.xml",
+            "map": [
+                {
+                    "source": "D:\\Coding\\SMSFinance\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "3,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "142,356",
+                        "endLines": "6,8",
+                        "endColumns": "12,68",
+                        "endOffsets": "348,420"
+                    },
+                    "to": {
+                        "startLines": "2,13",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,791",
+                        "endLines": "5,13",
+                        "endColumns": "12,67",
+                        "endOffsets": "154,854"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\yashc\\.gradle\\caches\\8.13\\transforms\\0b4eb006f12c85782bf9c85d3d622376\\transformed\\appcompat-1.2.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593,687",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "120,204,288,384,486,588,682,771"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9,10,11,12,14",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "159,229,313,397,493,595,697,859",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "224,308,392,488,590,692,786,943"
+                    }
+                }
+            ]
+        }
+    ]
+}
