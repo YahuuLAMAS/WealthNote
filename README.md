@@ -1,6 +1,6 @@
 # SMS Finance - UPI Expense Tracker
 
-An Android application that automatically tracks UPI transactions by parsing SMS messages and provides expense management features.
+This Android application serves as an intelligent financial management tool that automatically captures and categorizes all UPI transactions by parsing SMS notifications. It streamlines multi-account expense tracking, ensures seamless reconciliation of transaction histories, and allows users to annotate purchases with contextual notes for enhanced financial clarity and budgeting.
 
 ## Features
 
@@ -96,6 +96,17 @@ com.example.upiexpensetracker/
 │   └── theme/        # UI theming
 └── viewmodel/        # ViewModels
 ```
+## Synopsis 
+
+This project was developed using the Kotlin programming language and Jetpack Compose as the primary UI toolkit for building a modern, responsive, and declarative interface. The application follows the MVVM (Model–View–ViewModel) architecture to ensure clean separation of concerns, scalability, and maintainability.
+
+For local data management, the app integrates Room Database secured with Jetpack Security, ensuring encrypted storage of sensitive financial data. It utilizes core Android APIs such as BiometricPrompt for authentication and SMS handling APIs for parsing and capturing UPI transaction messages.
+
+The project includes all essential configurations such as Gradle dependencies and AndroidManifest.xml permissions required for SMS access, biometric security, and background services.
+
+Development and testing were carried out using Android Studio, with multiple virtual devices (AVDs) configured for cross-version and cross-device compatibility testing. MCP (Mobile Capability Platform) was employed to test functionality and performance, while TestSprite was used to verify core logic and user interactions.
+
+Comprehensive debugging and vulnerability checks were conducted to ensure data privacy, reliability, and security. The project also introduces separate interfaces for developers and end-users, enhancing modularity and access control while maintaining a secure application environment.
 
 ## License
 
