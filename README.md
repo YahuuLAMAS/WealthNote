@@ -102,7 +102,7 @@ This project was developed using the Kotlin programming language and Jetpack Com
 
 For local data management, the app integrates Room Database secured with Jetpack Security, ensuring encrypted storage of sensitive financial data. It utilizes core Android APIs such as BiometricPrompt for authentication and SMS handling APIs for parsing and capturing UPI transaction messages.
 
-The project includes all essential configurations such as Gradle dependencies and AndroidManifest.xml permissions required for SMS access, biometric security, and background services.
+The project includes NOT all essential configurations But common ones such as Gradle dependencies and AndroidManifest.xml permissions required for SMS access, biometric security, and background services.
 
 Development and testing were carried out using Android Studio, with multiple virtual devices (AVDs) configured for cross-version and cross-device compatibility testing. MCP (Mobile Capability Platform) was employed to test functionality and performance, while TestSprite was used to verify core logic and user interactions.
 
